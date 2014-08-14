@@ -117,29 +117,19 @@ namespace SpacuShuutar
 
         public void Update(GameTime gameTime)
         {
-            if (timeUntilStart <= 0)
-            {
                 if ((position - Player.Position).Length() > 3f)
                 {
                     direction = Vector2.Normalize(Player.Position - position) * speed;
                     position += direction;
                 }
                 animation.Position = position;
-                animation.Update(gameTime);
-                
-
-
-                if (health <= 0)
-                {
-                    active = false;
-                    
-                } 
-            }
-            else
+                animation.Update(gameTime);   
+          
+            if (health <= 0)
             {
-                timeUntilStart--;
-                color = Color.White * (1 - timeUntilStart / 60f);
-            }
+                active = false;
+
+            } 
             
                 
         }

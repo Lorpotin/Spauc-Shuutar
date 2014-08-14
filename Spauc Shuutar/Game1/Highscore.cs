@@ -40,14 +40,16 @@ namespace SpacuShuutar
         }
         public void ReadFile()    //Toimii tämäkin
         {
-            using (StreamReader reader = new StreamReader("c:\\test.txt"))
-            {
-                string line;
-                while ((line = reader.ReadLine()) != null)
+           
+                using (StreamReader reader = new StreamReader("C:\\test.txt"))
                 {
-                    scores.Add(line);
+                    string line;
+                    while ((line = reader.ReadLine()) != null)
+                    {
+                        scores.Add(line);
+                    }
                 }
-            }   
+            
         }
         public void SortTextFileAndWrite(string score)
         {
@@ -64,6 +66,11 @@ namespace SpacuShuutar
             spriteBatch.DrawString(font, "HIGHSCORES", new Vector2(600, 50), Color.White);
             spriteBatch.DrawString(font, "1. " + max, new Vector2(600, 300), Color.White);
             
+        }
+        public int HighestScore()
+        {
+            int max = Convert.ToInt32(scores.Max());
+            return max;
         }
     }
 }

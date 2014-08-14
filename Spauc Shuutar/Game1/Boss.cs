@@ -41,7 +41,7 @@ namespace SpacuShuutar
         {
             bossTexture = texture;
             turretTexture = turret;
-            health = 100;
+            health = 10000;
             damage = 1;
             bossColor = new Color(255, 255, 255, 255);
             speed = 4f;

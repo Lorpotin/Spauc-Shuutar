@@ -73,11 +73,11 @@ namespace SpacuShuutar
             switch (number)
             {
                 case 1:
-                    spawnPoint = new Vector2(random.Next(100, 1800), 0);
+                    spawnPoint = new Vector2(random.Next(100, 1800), 100);
                     break;
 
                 case 2:
-                    spawnPoint = new Vector2(1800, random.Next(50, 1030));
+                    spawnPoint = new Vector2(1800, random.Next(100, 1030));
                     break;
 
                 case 3:
@@ -85,7 +85,7 @@ namespace SpacuShuutar
                     break;
 
                 case 4:
-                    spawnPoint = new Vector2(0, random.Next(50, 1030));
+                    spawnPoint = new Vector2(100, random.Next(100, 1030));
                     break;
             }
 
@@ -105,7 +105,7 @@ namespace SpacuShuutar
         }
         public void ShootPlayer()
         {
-            if (shootCounter > 25)
+            if (shootCounter > 40)
             {
                 shootCounter = 0;
                 Bullet bullet = new Bullet(new Vector2(alienPosition.X + 60, alienPosition.Y - 10), GetPlayerPosition(), bulletTexture, target, graphics);

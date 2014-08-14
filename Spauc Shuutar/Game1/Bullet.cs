@@ -55,11 +55,10 @@ namespace SpacuShuutar
             direction.Normalize();
             position += direction * speed;
 
-            if (position.Y > gManager.GraphicsDevice.Viewport.Height | position.Y < 0 | position.X > gManager.GraphicsDevice.Viewport.Width
-                | position.X < 0)
+            if (position.Y > gManager.GraphicsDevice.Viewport.Height + 100 | position.Y < -100 | position.X > gManager.GraphicsDevice.Viewport.Width + 100
+                | position.X < -100)
             {
                 Dead = true;
-                player.combo = 0;
             }
             
                

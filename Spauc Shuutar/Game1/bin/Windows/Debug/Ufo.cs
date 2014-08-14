@@ -19,7 +19,7 @@ namespace SpacuShuutar
         public Color color, alienColor;
         public bool active;
         public int health, alienHealth;
-        public float speed;
+        public float speed, rotation;
         public int damage, alienDamage;
         public int score;
         int randX, randY;
@@ -89,23 +89,26 @@ namespace SpacuShuutar
 
             return spawnPoint;
         }
-       
-       
+
+        public void TurnUfo()
+        {
+            Vector2 direction = position - target.arrowPosition;
+            direction.Normalize();
+            rotation = (float)Math.Atan2(-direction.X, direction.Y);
+        }
         public void Update()
         {
 
-            int number = random.Next(1, 2);
+
             if (timeUntilStart <= 0)
             {
-                switch (number)
+                
+                TurnUfo();
+                
+                if ((position - Player.Position).Length() > 3f)
                 {
-                    case 1:
-                        if ((position - Player.Position).Length() > 3f)
-                        {
-                            direction = Vector2.Normalize(Player.Position - position) * speed;
-                            position += direction;
-                        }
-                        break;
+                    direction = Vector2.Normalize(Player.Position - position) * speed;
+                    position += direction;
                 }
             }
             else
@@ -118,23 +121,13 @@ namespace SpacuShuutar
                 active = false;
             }
         }
-        
-        
+
+
         public void Draw(SpriteBatch spriteBatch)
         {
-            int number = random.Next(1, 2);
-            switch (number)
-            {
-                case 1:
-                    spriteBatch.Draw(ufoTexture, position, color);
-                    break;
-
-                case 2:
-                    spriteBatch.Draw(ufoTexture2, position, color);
-                    break;
-
-            }
+            spriteBatch.Draw(ufoTexture, position, null, color, rotation, origin, 1.0f, SpriteEffects.None, 0);
         }
-
     }
+
 }
+

@@ -172,23 +172,28 @@ namespace SpacuShuutar
                 //Ase kehittyy combon mukaan
                 
             }
-            if (combo < 5)
+            if (combo < 3)
             {
-                gunStage = 1;
+                gunStage = 4;
                 currentGun = "Basic Lazer";
 
             }
-            else if (combo > 10)
-            {
-                gunStage = 3;
-                currentGun = "Mega Annihilation";
-
-            }
-            else
+            else if (combo < 7)
             {
                 gunStage = 2;
-                currentGun = "Triple Lazers";
+                currentGun = "Double Lazer";
 
+            }
+            else if (combo < 10)
+            {
+                gunStage = 3;
+                currentGun = "Such lazers, wow";
+
+            }
+            else if (combo > 15)
+            {
+                gunStage = 1;
+                currentGun = "Mega annihilazion";
             }
    
         }
