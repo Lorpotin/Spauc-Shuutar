@@ -34,8 +34,8 @@ namespace SpacuShuutar
             this.rotation = rotation;
             this.player = player;
             bulletTexture = texture;
-            speed = 20;
-            damage = 150;
+            speed = 15;
+            damage = 25;
             center = new Vector2(position.X + bulletTexture.Width / 2, position.Y + bulletTexture.Height / 2);
             origin = new Vector2(bulletTexture.Width / 2, bulletTexture.Height / 2);
             dead = false;

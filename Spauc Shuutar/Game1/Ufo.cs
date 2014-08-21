@@ -32,7 +32,7 @@ namespace SpacuShuutar
         public Ufo(Texture2D texture, Texture2D texture2, Player player, Texture2D bulletTexture)
         {
             active = true;
-            health = 200;
+            health = 100;
             damage = 10;
             score = 5;
             speed = 6f;

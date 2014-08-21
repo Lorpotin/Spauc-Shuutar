@@ -80,7 +80,7 @@ namespace SpacuShuutar
         public TimeSpan asteroidSpawnTime, previousSpawnTime, lastBulletShot, ShootInterval;
         public SoundEffect exp1, exp2, exp3, laser, machinegun;
         Random random;
-        EpicHealthBar healthBar;
+
         SpriteFont font, epicfont, scifiFont;
         public int shootCounter = 20, fadeCounter = 0, optionsCounter = 10, alienSpawnCounter;
         public int mGunCounter = 10;
@@ -133,7 +133,6 @@ namespace SpacuShuutar
             title1 = Content.Load<Texture2D>("SpaucShuutar");
             title2 = Content.Load<Texture2D>("IT'S OVER 9000!");
             backGroundTexture = Content.Load<Texture2D>("background");
-            pause = Content.Load<Texture2D>("pause");
             player = Content.Load<Texture2D>("ship");
             menuShip = Content.Load<Texture2D>("menuship");
             asteroid = Content.Load<Texture2D>("asteroid");
@@ -153,7 +152,6 @@ namespace SpacuShuutar
             highScores = Content.Load<Texture2D>("highscore");
             menuLine = Content.Load<Texture2D>("line");
             scifiFont = Content.Load<SpriteFont>("ScifiFont(72)");
-            plusAmmo = Content.Load<Texture2D>("plusammo");
             miniGun = Content.Load<Texture2D>("minigun");
             supaGun = Content.Load<Texture2D>("arrowtower");
             foreGround = Content.Load<Texture2D>("hpforeground");
@@ -210,8 +208,7 @@ namespace SpacuShuutar
             options = new Button(optionsTexture, new Vector2(1000, 580), new Vector2(594, 115));
             highScoresButton = new Button(highScoreButton, new Vector2(1000, 760), new Vector2(877, 103));
             //Game-over-valikon näppäimet
-            quitGameOver = new Button(quitTexture, new Vector2(700, 600), new Vector2(344, 110));
-            playAgain = new Button(again, new Vector2(700, 100), new Vector2(400, 116));
+            quitGameOver = new Button(quitTexture, new Vector2(750, 800), new Vector2(344, 110));
             //Aluksen valinnan näppäimet
             ship1 = new Button(ship_1, new Vector2(650, 370), new Vector2(150, 267));
             ship2 = new Button(ship_2, new Vector2(900, 400), new Vector2(150, 212));
@@ -222,7 +219,6 @@ namespace SpacuShuutar
             ParticleTextures.Add(diamond);
             particleEngine = new JetParticle(ParticleTextures, new Vector2(Player.Position.X, Player.Position.Y - 45));
             //Luodaan hpBar, kesken
-            healthBar = new EpicHealthBar(foreGround, borders, Player);
             //Luetaan tiedostosta nykyinen highscore
             //hiScores.ReadFile();
             //hiScores.SortTextFileAndWrite(hiscore);
@@ -230,6 +226,7 @@ namespace SpacuShuutar
             //credits = new ScrollingBackground(creditsTexture, true);
             dustLayer = new ScrollingBackground(spaceDustLayer, false);
             creditz = new IntroVideo(intro, scifiFont);
+            hiScores.scores.Add("1337");
             
         }
         public void ResetFade()
@@ -283,7 +280,7 @@ namespace SpacuShuutar
             alienTimer += (float)gameTime.ElapsedGameTime.TotalSeconds;
             if (alienTimer >= 12.5)
             {
-                if (alienTimer <= 80)
+                if (alienTimer <= 210)
                 {
                     AddAlien(gameTime);
                 }
@@ -361,17 +358,9 @@ namespace SpacuShuutar
             if (timer >= 2)
             {
                 timer = 0;
-                if (helpTimer < 80)
+                if (helpTimer < 210)
                 {
                     if (ufoArray.Count < 5)
-                    {
-                        Ufo ufo = new Ufo(ufoTexture, alien, Player, bulletTexture);
-                        ufoArray.Add(ufo);
-                    }
-                }
-                if (helpTimer > 80)
-                {
-                    if (ufoArray.Count < 8)
                     {
                         Ufo ufo = new Ufo(ufoTexture, alien, Player, bulletTexture);
                         ufoArray.Add(ufo);
@@ -385,7 +374,7 @@ namespace SpacuShuutar
             gameTimer += (float)gameTime.ElapsedGameTime.TotalSeconds;
             if (gameTimer >= 12.5)
             {
-                if (gameTimer <= 80)
+                if (gameTimer <= 210)
                 {
                     AddUfos(gameTime);
                 }
@@ -420,7 +409,7 @@ namespace SpacuShuutar
                 {
                     previousSpawnTime = gameTime.TotalGameTime;
                     //BOSSIA VARTEN@@
-                    if (startGameTimer <= 80)
+                    if (startGameTimer <= 210)
                         AddAsteroid();
                 }
                 for (int i = asteroidArray.Count - 1; i >= 0; i--)
@@ -508,7 +497,7 @@ namespace SpacuShuutar
                     }
                     Player.health -= ufoArray[q].damage;
                     ufoArray[q].health = 0;
-                    healthBar.Width -= 10;
+
                 }
 
             }
@@ -521,7 +510,7 @@ namespace SpacuShuutar
                     exp1.Play(0.7f, 0.0f, 0.0f);
                     Player.health -= alienArray[i].damage;
                     alienArray[i].health = 0;
-                    healthBar.Width -= 10;
+
                 }
 
             }
@@ -550,7 +539,7 @@ namespace SpacuShuutar
                     }
                     Player.health -= asteroidArray[i].damage;
                     asteroidArray[i].health = 0;
-                    healthBar.Width -= 10;
+
                 }
                 
             }
@@ -564,7 +553,7 @@ namespace SpacuShuutar
                         bossHitCounter = 0;
                         Player.health -= 50;
                         bossArray[i].hit = true;
-                        healthBar.Width -= 5;
+
                         if (bossArray[i].health <= 0)
                         {
                             Player.score += 200;
@@ -678,6 +667,88 @@ namespace SpacuShuutar
                         shootCounter++;
                 }
             }
+            if (Player.gunStage == 5)
+            {
+                if (mouse.LeftButton == ButtonState.Pressed)
+                {
+                    //Purkka jolla poistetaan "railgun"
+                    if (shootCounter > 20)
+                    {
+
+                        Bullet bull = new Bullet(new Vector2(Player.arrowPosition.X, Player.arrowPosition.Y), Player.arrowDirection + new Vector2(50, 0), upLaser, Player, graphics);
+                        Bullet bull2 = new Bullet(new Vector2(Player.arrowPosition.X, Player.arrowPosition.Y), Player.arrowDirection, upLaser, Player, graphics);
+                        Bullet bull3 = new Bullet(new Vector2(Player.arrowPosition.X + 50, Player.arrowPosition.Y), Player.arrowDirection, upLaser, Player, graphics);
+                        Bullet bull4 = new Bullet(new Vector2(Player.arrowPosition.X + 50, Player.arrowPosition.Y), Player.arrowDirection + new Vector2(-50, 0), upLaser, Player, graphics);
+                        Bullet bull5 = new Bullet(new Vector2(Player.arrowPosition.X + 50, Player.arrowPosition.Y), Player.arrowDirection * -1f, upLaser, Player, graphics);
+                        Bullet bull6 = new Bullet(new Vector2(Player.arrowPosition.X, Player.arrowPosition.Y), Player.arrowDirection * -1f, upLaser, Player, graphics);
+                        Bullet bull7 = new Bullet(new Vector2(Player.arrowPosition.X + 50, Player.arrowPosition.Y), Player.arrowDirection + new Vector2(100, 0), upLaser, Player, graphics);
+                        laser.Play(0.2f, 0.0f, 0.0f);
+                        bulletArray.Add(bull);
+                        bulletArray.Add(bull2);
+                        bulletArray.Add(bull3);
+                        bulletArray.Add(bull4);
+                        bulletArray.Add(bull5);
+                        bulletArray.Add(bull6);
+                        bulletArray.Add(bull7);
+                        shootCounter = 0;
+
+                    }
+                    else
+                        shootCounter++;
+                }
+            }
+            if (Player.gunStage == 6)
+            {
+                if (mouse.LeftButton == ButtonState.Pressed)
+                {
+                    //Purkka jolla poistetaan "railgun"
+                    if (shootCounter > 5)
+                    {
+                        Random rando = new Random();
+                        int rand1 = rando.Next(100, 1800);
+                        int rand2 = rando.Next(100, 1000);
+                        Bullet bull = new Bullet(new Vector2(Player.arrowPosition.X, Player.arrowPosition.Y), new Vector2(rand1, rand2), upLaser, Player, graphics);
+                        Bullet bull2 = new Bullet(new Vector2(Player.arrowPosition.X, Player.arrowPosition.Y), Player.arrowDirection, upLaser, Player, graphics);
+                        Bullet bull3 = new Bullet(new Vector2(Player.arrowPosition.X + 20, Player.arrowPosition.Y), Player.arrowDirection, upLaser, Player, graphics);
+                       
+                        laser.Play(0.2f, 0.0f, 0.0f);
+                        bulletArray.Add(bull);
+                        bulletArray.Add(bull2);
+                        bulletArray.Add(bull3);
+                       
+                        shootCounter = 0;
+
+                    }
+                    else
+                        shootCounter++;
+                }
+            }
+            if (Player.gunStage == 7)
+            {
+                if (mouse.LeftButton == ButtonState.Pressed)
+                {
+                    //Purkka jolla poistetaan "railgun"
+                    if (shootCounter > 5)
+                    {
+
+                        Bullet bull = new Bullet(new Vector2(Player.arrowPosition.X, Player.arrowPosition.Y), Player.arrowDirection + new Vector2(50, 0), upLaser, Player, graphics);
+                        Bullet bull2 = new Bullet(new Vector2(Player.arrowPosition.X, Player.arrowPosition.Y), Player.arrowDirection, upLaser, Player, graphics);
+                        Bullet bull3 = new Bullet(new Vector2(Player.arrowPosition.X + 50, Player.arrowPosition.Y), Player.arrowDirection, upLaser, Player, graphics);
+                        Bullet bull4 = new Bullet(new Vector2(Player.arrowPosition.X + 50, Player.arrowPosition.Y), Player.arrowDirection + new Vector2(-50, 0), upLaser, Player, graphics);
+                        Bullet bull5 = new Bullet(new Vector2(Player.arrowPosition.X + 50, Player.arrowPosition.Y), Player.arrowDirection * -1f, upLaser, Player, graphics);
+                        laser.Play(0.2f, 0.0f, 0.0f);
+                        bulletArray.Add(bull);
+                        bulletArray.Add(bull2);
+                        bulletArray.Add(bull3);
+                        bulletArray.Add(bull4);
+                        bulletArray.Add(bull5);
+                        shootCounter = 0;
+
+                    }
+                    else
+                        shootCounter++;
+                }
+            }
             //Käydään läpi kaikki ammutut luodit
             for (int a = 0; a < bulletArray.Count; a++)
             {
@@ -714,7 +785,7 @@ namespace SpacuShuutar
                             Player.score += asteroidArray[i].score + (Player.combo);
 
                             //Rollaillaan vähän ettei ihan liian helposti tule powarUpsei
-                            int letsRollaBitRare = random.Next(1, 15);
+                            int letsRollaBitRare = random.Next(1, 50);
 
                             if (letsRollaBitRare == 3 && MiniGun.isActive == false)
                             {
@@ -762,7 +833,7 @@ namespace SpacuShuutar
                             if (letsRollaBitRare == 3 && MiniGun.isActive == false)
                             {
                                 MiniGun.isActive = true;
-                                HomingMinigunPowarUp muchPower = new HomingMinigunPowarUp(supaGun, new Vector2(asteroidArray[i].position.X, asteroidArray[i].position.Y));
+                                HomingMinigunPowarUp muchPower = new HomingMinigunPowarUp(supaGun, new Vector2(alienArray[i].alienPosition.X, alienArray[i].alienPosition.Y));
                                 homingArray.Add(muchPower);
                             }
                         }
@@ -799,12 +870,12 @@ namespace SpacuShuutar
                             //Mitä isompi combo, sitä enemmän saa pisteitä vihollisesta
                             Player.score += ufoArray[i].score + (Player.combo);
 
-                            int letsRollaBitRare = random.Next(1, 15);
+                            int letsRollaBitRare = random.Next(1, 30);
 
                             if (letsRollaBitRare == 3 && MiniGun.isActive == false)
                             {
                                 MiniGun.isActive = true;
-                                HomingMinigunPowarUp muchPower = new HomingMinigunPowarUp(supaGun, new Vector2(asteroidArray[i].position.X, asteroidArray[i].position.Y));
+                                HomingMinigunPowarUp muchPower = new HomingMinigunPowarUp(supaGun, new Vector2(ufoArray[i].position.X, ufoArray[i].position.Y));
                                 homingArray.Add(muchPower);
                             }
                         }
@@ -817,7 +888,8 @@ namespace SpacuShuutar
                     if (rectangle1.Intersects(bossRectangle))
                     {
                         bulletArray[a].Dead = true;
-                        bossArray[i].health -= bulletArray[a].damage;
+                        if (bossArray[i].canTakeDamage)
+                            bossArray[i].health -= bulletArray[a].damage;
                         bossArray[i].hit = true;
                         if (bossArray[i].health <= 0)
                         {
@@ -1047,9 +1119,7 @@ namespace SpacuShuutar
                     }
                     if ((Keyboard.GetState().IsKeyDown(Keys.Enter)))
                     {
-                        int score = 9000;
-                        string hiscore = score.ToString();
-                        hiScores.SortTextFileAndWrite(hiscore);
+                        
 
                     }
 
@@ -1076,9 +1146,9 @@ namespace SpacuShuutar
                     if (ship1.isClicked == true)
                     {
                         Player.playerTexture = ship_1;
-                        Player.damage = 100;
-                        Player.health = 1000;
-                        MediaPlayer.Stop();
+                        Player.damage = 50;
+                        Player.health = 2000;
+                        
                         MediaPlayer.Play(gameSong);
                         
 
@@ -1086,18 +1156,18 @@ namespace SpacuShuutar
                     if (ship2.isClicked == true)
                     {
                         Player.playerTexture = ship_2;
-                        Player.damage = 200;
-                        Player.health = 500;
-                        MediaPlayer.Stop();
+                        Player.damage = 75;
+                        Player.health = 1500;
+                        
                         MediaPlayer.Play(gameSong);
 
                     }
                     if (ship3.isClicked == true)
                     {
                         Player.playerTexture = ship_3;
-                        Player.health = 500000;
-                        Player.damage = 25;
-                        MediaPlayer.Stop();
+                        Player.health = 800;
+                        Player.damage = 125;
+                        
                         gameSong = Content.Load<Song>("game");
                         MediaPlayer.Play(gameSong);
                         
@@ -1135,12 +1205,10 @@ namespace SpacuShuutar
                         particleEngine.EmitterLocation = new Vector2(Player.Position.X, Player.Position.Y);
                         particleEngine.Update();
                         //spriteAnimation.Update(gameTime);
-                        if (gameTimer > 80)
+                        if (gameTimer > 210)
                         {
                             gameState = GameStates.Boss;
-                            MediaPlayer.Stop();
                             MediaPlayer.Play(bossSong);
-                            MediaPlayer.MoveNext();
                         }
 
                         if (Player.ready)
@@ -1242,8 +1310,8 @@ namespace SpacuShuutar
                                 gameState = GameStates.GameOver;
                                 MediaPlayer.Play(gamuover);
                                 IsMouseVisible = true;
-                                string hiscore = Player.score.ToString();
-                                hiScores.SortTextFileAndWrite(hiscore);
+                                //string hiscore = Player.score.ToString();
+                                //hiScores.SortTextFileAndWrite(hiscore);
                             }
                         }
                         UpdateExplosions(gameTime);
@@ -1289,8 +1357,8 @@ namespace SpacuShuutar
                                 {
                                     var winner = Content.Load<Song>("winrar");
                                     MediaPlayer.Play(winner);
-                                    string hiscore = Player.score.ToString();
-                                    hiScores.SortTextFileAndWrite(hiscore);
+                                    /*string hiscore = Player.score.ToString();
+                                    hiScores.SortTextFileAndWrite(hiscore);*/
                                     gameState = GameStates.Victory;
 
                                 }
@@ -1340,8 +1408,8 @@ namespace SpacuShuutar
                                 string points = Player.score.ToString();
                                 gameState = GameStates.GameOver;
                                 MediaPlayer.Play(gamuover);
-                                string hiscore = Player.score.ToString();
-                                hiScores.SortTextFileAndWrite(hiscore);
+                                /*string hiscore = Player.score.ToString();
+                                hiScores.SortTextFileAndWrite(hiscore);*/
                             }
                         }
                         dustLayer.Update(gameTime);
@@ -1379,24 +1447,12 @@ namespace SpacuShuutar
                         //Jos valitaan uusi peli, tuhotaan kaikki vanhat tiedot ja alustetaan uusi peli :)
                         IsMouseVisible = true;
                         quitGameOver.Update(mouse);
-                        playAgain.Update(mouse);
                         if (quitGameOver.isClicked)
                         {
                             var menuSong = Content.Load<Song>("menu");
                             MediaPlayer.Play(menuSong);
                             ClearEverything();
                             gameState = GameStates.Menu;
-                        }
-                        if (playAgain.isClicked)
-                        {
-                            //Edelleenkin tuhotaan kaikki ja aloitetaan uusi peli.
-                            ClearEverything();
-                            boss.active = false;
-                            boss.victory = false;
-                            gameState = GameStates.Level1;
-                            var gameSong = Content.Load<Song>("game");
-                            MediaPlayer.Play(gameSong);
-                            MediaPlayer.MoveNext();
                         }
                     }
                     break;
@@ -1418,7 +1474,7 @@ namespace SpacuShuutar
                         {
                             if (optionsCounter > 10)
                             {
-                                hiScores.ReadFile();
+                                //hiScores.ReadFile();
                                 optionsCounter = 0;
                             }
                             else
@@ -1542,20 +1598,22 @@ namespace SpacuShuutar
                 starfield.Draw(spriteBatch);
                 particleEngine.Draw(spriteBatch);
                 //Piirrellään ja päivitellään tietoja pelaajan statistiikoista.
-                healthBar.Draw(spriteBatch);
 
-                spriteBatch.DrawString(font, "Health " + Player.health, new Vector2(50, 30), Color.White);
-                spriteBatch.DrawString(font, "Score " + Player.score, new Vector2(50, 150), Color.White);
-                spriteBatch.DrawString(font, "HighScore " + hiScores.HighestScore(), new Vector2(50, 200), Color.White);
-                spriteBatch.DrawString(font, "Combo " + Player.combo, new Vector2(50, 100), Color.White);
-                spriteBatch.DrawString(font, "Gun: " + Player.currentGun, new Vector2(50, 250), Color.White);
+
+                spriteBatch.DrawString(epicfont, "Health " + Player.health, new Vector2(50, 30), Color.White);
+                spriteBatch.DrawString(epicfont, "Score " + Player.score, new Vector2(50, 150), Color.White);
+                spriteBatch.DrawString(epicfont, "HighScore " + hiScores.HighestScore(), new Vector2(50, 200), Color.White);
+                spriteBatch.DrawString(epicfont, "Combo " + Player.combo, new Vector2(50, 100), Color.White);
+                spriteBatch.DrawString(epicfont, "Gun: " + Player.currentGun, new Vector2(50, 250), Color.White);
                 if (Player.homingammo > 0)
-                    spriteBatch.DrawString(font, "HomingAmmo: " + Player.homingammo, new Vector2(50, 300), Color.White);
+                    spriteBatch.DrawString(epicfont, "HomingAmmo: " + Player.homingammo, new Vector2(50, 300), Color.White);
                 else if (Player.homingammo == 0)
-                    spriteBatch.DrawString(font, "You are out of ammunition!", new Vector2(50, 300), Color.White);
-                spriteBatch.DrawString(font, "Enemies killed: " + enemiesKilled, new Vector2(50, 400), Color.White);
-                spriteBatch.DrawString(font, "Velocity " + Player.velocity, new Vector2(50, 500), Color.White);
-                spriteBatch.DrawString(font, "Position " + Player.arrowPosition, new Vector2(50, 550), Color.White);
+                    spriteBatch.DrawString(epicfont, "You are out of ammunition!", new Vector2(50, 300), Color.White);
+                spriteBatch.DrawString(epicfont, "Enemies killed: " + enemiesKilled, new Vector2(50, 400), Color.White);
+                /*
+                spriteBatch.DrawString(epicfont, "Velocity " + Player.velocity, new Vector2(50, 500), Color.White);
+                spriteBatch.DrawString(epicfont, "Position " + Player.arrowPosition, new Vector2(50, 550), Color.White);
+                 */
                 //Pelin alkuspiikkei
                 if (startGameTimer > 1 && startGameTimer < 4)
                     spriteBatch.DrawString(scifiFont, "WELCOME....", new Vector2(600, 400), Color.White);
@@ -1664,7 +1722,7 @@ namespace SpacuShuutar
                 
                 spriteBatch.Begin();
                 //Piirrellään ja päivitellään tietoja pelaajan statistiikoista.
-                healthBar.Draw(spriteBatch);
+
                 if (timer > 1 && timer < 11)
                     spriteBatch.DrawString(scifiFont, "DANGER AHEAD!", new Vector2(550, 400), Color.White);
                 spriteBatch.DrawString(font, "Health " + Player.health, new Vector2(50, 30), Color.White);
@@ -1775,8 +1833,8 @@ namespace SpacuShuutar
             {
                 spriteBatch.Draw(backGroundTexture, new Rectangle(0, 0, 1920, 1080), Color.White);
                 quitGameOver.Draw(spriteBatch);
-                playAgain.Draw(spriteBatch);
-                spriteBatch.DrawString(epicfont, "Your Score is " + Player.score, new Vector2(900, 900), Color.White);
+                spriteBatch.DrawString(scifiFont, "GAME OVER", new Vector2(500, 50), Color.White);
+                spriteBatch.DrawString(scifiFont, "Your Score is " + Player.score, new Vector2(350, 400), Color.White);
             }
             else if (gameState == GameStates.Highscores)
             {

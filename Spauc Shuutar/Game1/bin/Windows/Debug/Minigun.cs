@@ -54,7 +54,7 @@ namespace SpacuShuutar
         {
             this.gunTexture = text;
             this.player = player;
-            position = new Vector2(player.arrowPosition.X + 35, player.arrowPosition.Y + 15);
+            position = new Vector2(player.arrowPosition.X + 45, player.arrowPosition.Y + 15);
             center = new Vector2(position.X + gunTexture.Width / 2, position.Y + gunTexture.Height / 2);
             origin = new Vector2(gunTexture.Width / 2, gunTexture.Height / 2);
             isActive = active;

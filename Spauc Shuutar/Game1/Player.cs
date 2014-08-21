@@ -178,22 +178,37 @@ namespace SpacuShuutar
                 currentGun = "Basic Lazer";
 
             }
-            else if (combo < 7)
+            else if (combo < 12)
             {
                 gunStage = 2;
                 currentGun = "Double Lazer";
 
             }
-            else if (combo < 10)
+            else if (combo < 25)
             {
                 gunStage = 3;
                 currentGun = "Such lazers, wow";
 
             }
-            else if (combo > 15)
+            else if (combo < 35)
             {
                 gunStage = 4;
-                currentGun = "Mega annihilazion";
+                currentGun = "More lazers";
+            }
+            else if (combo < 60)
+            {
+                gunStage = 5;
+                currentGun = "Much mega lazer";
+            }
+            else if (combo < 90)
+            {
+                gunStage = 6;
+                currentGun = "Mega Annihilation";
+            }
+            else if (combo > 120)
+            {
+                gunStage = 7;
+                currentGun = "I Dont even..";
             }
    
         }

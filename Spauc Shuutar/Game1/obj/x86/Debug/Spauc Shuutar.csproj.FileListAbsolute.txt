@@ -49,9 +49,7 @@ C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Deb
 C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Debug\Content\menuship.png
 C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Debug\Content\mgunbullet.png
 C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Debug\Content\minigun.png
-C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Debug\Content\pause.png
 C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Debug\Content\PLAY.png
-C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Debug\Content\plusammo.png
 C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Debug\Content\pomo.wma
 C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Debug\Content\QUIT.png
 C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Debug\Content\redlaser.jpg
@@ -86,7 +84,6 @@ C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Deb
 C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Debug\Asteroid.cs
 C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Debug\Boss.cs
 C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Debug\Button.cs
-C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Debug\EpicHealthBar.cs
 C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Debug\Game1.cs
 C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Debug\Highscore.cs
 C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Debug\HomingMinigunPowarUp.cs

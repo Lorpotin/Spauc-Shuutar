@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Game1.exe" size="209408">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Game1.exe" size="210944">
       <assemblyIdentity name="Game1" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>qQnscotYx88FU4uqy6/rR/+8M10=</dsig:DigestValue>
+        <dsig:DigestValue>VF8rrkuHJ3yKokn6NgC4wqBQr5U=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -714,15 +714,6 @@
       <dsig:DigestValue>HPRvGRQXIjN/dL0WpMSOvdi0GCc=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\pause.png" size="35068">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>yrnaYKNLHO/lSvh6hJsfXFenU24=</dsig:DigestValue>
-    </hash>
-  </file>
   <file name="Content\PLAY.png" size="2857">
     <hash>
       <dsig:Transforms>
@@ -730,15 +721,6 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
       <dsig:DigestValue>rGeJdYkdtDqclmaYsstNIqcQ1yo=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Content\plusammo.png" size="676">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>D5qD9XuNsLpv5qFkun25ZPTgOl4=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\pomo.wma" size="2537257">
@@ -822,13 +804,13 @@
       <dsig:DigestValue>dqKGzXORHovjIj+KHPAxOAFrBVE=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Ship_2.png" size="10885">
+  <file name="Content\Ship_2.png" size="12790">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>36LQroqWlpnd2+f3Dg9PC2tvrBA=</dsig:DigestValue>
+      <dsig:DigestValue>eeB6PbvYjMlGsMtZZJuq+B+fzhg=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Ship_3.png" size="5029">
@@ -858,22 +840,22 @@
       <dsig:DigestValue>nJLO0f4eRDIJQ+Khc1rppK0n/Ys=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\SpaucShuutar.png" size="37185">
+  <file name="Content\SpaucShuutar.png" size="40167">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>HvWiDdx+cbllT4ct5LFP6lnMv7k=</dsig:DigestValue>
+      <dsig:DigestValue>2JDnjQNpwwLXgWkpejj/sT0XdB4=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\SpriteFont1.xnb" size="267438">
+  <file name="Content\SpriteFont1.xnb" size="38062">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>kebJSUNUC3NEHJPaCHxcJZYmX2k=</dsig:DigestValue>
+      <dsig:DigestValue>9HakJ4IkDDcPfdJ5DTijcUNR9Sg=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\star.bmp" size="126">

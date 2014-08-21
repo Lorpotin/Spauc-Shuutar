@@ -37,7 +37,7 @@ namespace SpacuShuutar
         public Alien(Texture2D texture, Player player, Texture2D bulletTexture)
         {
             active = true;
-            health = 200;
+            health = 100;
             damage = 10;
             score = 5;
             speed = 6f;

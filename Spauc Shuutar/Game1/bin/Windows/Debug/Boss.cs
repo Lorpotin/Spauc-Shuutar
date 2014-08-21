@@ -24,7 +24,7 @@ namespace SpacuShuutar
         public float bossRotation, turretRotation;
         public Color bossColor, hitColor;
         public bool hit;
-        public bool victory;
+        public bool victory, canTakeDamage;
         Random random = new Random();
         public Player target;
         public Bullet bullet;
@@ -41,7 +41,7 @@ namespace SpacuShuutar
         {
             bossTexture = texture;
             turretTexture = turret;
-            health = 10000;
+            health = 20000;
             damage = 1;
             bossColor = new Color(255, 255, 255, 255);
             speed = 4f;
@@ -58,6 +58,7 @@ namespace SpacuShuutar
             teleportPossible = true;
             ramming = false;
             shooting = true;
+            canTakeDamage = false;
 
         }
 
@@ -160,7 +161,7 @@ namespace SpacuShuutar
                 position.Y += 0.4f;
             if (timer >= 18.5)
             {
-
+                canTakeDamage = true;
                 keissitimer1 += (float)gameTime.ElapsedGameTime.TotalSeconds;
 
                 if (keissitimer1 >= 10)
