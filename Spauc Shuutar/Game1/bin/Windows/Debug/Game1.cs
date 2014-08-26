@@ -137,25 +137,25 @@ namespace SpacuShuutar
             menuShip = Content.Load<Texture2D>("menuship");
             asteroid = Content.Load<Texture2D>("asteroid");
             bossTurretTexture = Content.Load<Texture2D>("bossturret");
-            gameover = Content.Load<Texture2D>("gameover");
+           
             font = Content.Load<SpriteFont>("font");
             epicfont = Content.Load<SpriteFont>("SpriteFont1");
             bulletTexture = Content.Load<Texture2D>("bullet");
             bigBulletTexture = Content.Load<Texture2D>("bigbullet");
-            creditsTexture = Content.Load<Texture2D>("creditz");
+            
             exp1 = Content.Load<SoundEffect>("exp1");
             exp2 = Content.Load<SoundEffect>("exp2");
             exp3 = Content.Load<SoundEffect>("exp3");
             laser = Content.Load<SoundEffect>("laser1");
             machinegun = Content.Load<SoundEffect>("machinegun1");
             lazerBall = Content.Load<Texture2D>("lazerball");
-            highScores = Content.Load<Texture2D>("highscore");
+           
             menuLine = Content.Load<Texture2D>("line");
             scifiFont = Content.Load<SpriteFont>("ScifiFont(72)");
-            miniGun = Content.Load<Texture2D>("minigun");
+            
             supaGun = Content.Load<Texture2D>("arrowtower");
-            foreGround = Content.Load<Texture2D>("hpforeground");
-            borders = Content.Load<Texture2D>("hpborders");
+            
+           
             mgunBulletTexture = Content.Load<Texture2D>("mgunbullet");
             crosshairTexture = Content.Load<Texture2D>("crosshair");
             bossTexture = Content.Load<Texture2D>("bosstexture");
@@ -965,6 +965,7 @@ namespace SpacuShuutar
                                 MiniGun.isActive = true;
                                 HomingMinigunPowarUp muchPower = new HomingMinigunPowarUp(supaGun, new Vector2(asteroidArray[a].position.X, asteroidArray[a].position.Y));
                                 homingArray.Add(muchPower);
+                                Player.homingammo += 50;
                             }
 
                         }
@@ -1004,6 +1005,7 @@ namespace SpacuShuutar
                                 MiniGun.isActive = true;
                                 HomingMinigunPowarUp muchPower = new HomingMinigunPowarUp(supaGun, new Vector2(asteroidArray[b].position.X, asteroidArray[b].position.Y));
                                 homingArray.Add(muchPower);
+                                Player.homingammo += 50;
                             }
                         }
                     }
@@ -1049,12 +1051,15 @@ namespace SpacuShuutar
             for (int e = 0; e < ufoArray.Count; e++)
             {
                 ufoArray.Clear();
+            } for (int e = 0; e < alienArray.Count; e++)
+            {
+                alienArray.Clear();
             }
             Player.acceleration = new Vector2(0, 0);
             Player.velocity = new Vector2(0, 0);
             Player.direction = new Vector2(0, 0);
             Player.arrowPosition = new Vector2(900, 700);
-            Player.health = 100;
+            Player.health = 1500;
             Player.score = 0;
             Player.homingammo = 50;
             startGameTimer = 0;
@@ -1068,6 +1073,11 @@ namespace SpacuShuutar
             ship1active = false;
             ship2active = false;
             ship3active = false;
+            ship1.isClicked = false;
+            ship2.isClicked = false;
+            ship3.isClicked = false;
+            clickCounter = 0;
+            
         }
         #region PÄIVITYKSET
         protected override void Update(GameTime gameTime)
@@ -1303,16 +1313,14 @@ namespace SpacuShuutar
                         if (Player.health <= 0)
                         {
 
-                            deathTimer += (float)gameTime.ElapsedGameTime.TotalSeconds;
-                            if (deathTimer > 2)
-                            {
+                            
                                 string points = Player.score.ToString();
                                 gameState = GameStates.GameOver;
                                 MediaPlayer.Play(gamuover);
                                 IsMouseVisible = true;
                                 //string hiscore = Player.score.ToString();
                                 //hiScores.SortTextFileAndWrite(hiscore);
-                            }
+                           
                         }
                         UpdateExplosions(gameTime);
                         dustLayer.Update(gameTime);
@@ -1402,15 +1410,13 @@ namespace SpacuShuutar
                         }
                         if (Player.health <= 0)
                         {
-                            deathTimer += (float)gameTime.ElapsedGameTime.TotalSeconds;
-                            if (deathTimer > 2)
-                            {
+                           
                                 string points = Player.score.ToString();
                                 gameState = GameStates.GameOver;
                                 MediaPlayer.Play(gamuover);
                                 /*string hiscore = Player.score.ToString();
                                 hiScores.SortTextFileAndWrite(hiscore);*/
-                            }
+                            
                         }
                         dustLayer.Update(gameTime);
                         base.Update(gameTime);
@@ -1462,24 +1468,18 @@ namespace SpacuShuutar
                       
                         if ((Keyboard.GetState().IsKeyDown(Keys.Escape)))
                         {
-                            if (optionsCounter > 20)
+                            if (optionsCounter > 5)
                             {
                                 gameState = GameStates.Menu;
+
+
                                 optionsCounter = 0;
                             }
                             else
                                 optionsCounter++;
+                            
                         }
-                        if ((Keyboard.GetState().IsKeyDown(Keys.Enter)))
-                        {
-                            if (optionsCounter > 10)
-                            {
-                                //hiScores.ReadFile();
-                                optionsCounter = 0;
-                            }
-                            else
-                                optionsCounter++;
-                        }
+                       
 
 
                     }
@@ -1489,7 +1489,7 @@ namespace SpacuShuutar
                         
                         if (Keyboard.GetState().IsKeyDown(Keys.Escape))
                         {
-                            if (optionsCounter > 10)
+                            if (optionsCounter > 5)
                             {
                                 gameState = GameStates.Menu;
                                 optionsCounter = 0;
@@ -1627,13 +1627,13 @@ namespace SpacuShuutar
                 {
                     hsTimer++;
                     if (hsTimer < 75)
-                        spriteBatch.DrawString(scifiFont, "New Highscore!!", new Vector2(600, 400), Color.White);
+                        spriteBatch.DrawString(scifiFont, "New Highscore!!", new Vector2(500, 400), Color.White);
                 }
                 if (MiniGun.isActive)
                 {
                     minigunTimer++;
                     if (minigunTimer < 35)
-                        spriteBatch.DrawString(scifiFont, "Minigun Activated!", new Vector2(600, 400), Color.White);
+                        spriteBatch.DrawString(scifiFont, "Minigun Activated!", new Vector2(500, 400), Color.White);
                 }
 
 
@@ -1725,24 +1725,24 @@ namespace SpacuShuutar
 
                 if (timer > 1 && timer < 11)
                     spriteBatch.DrawString(scifiFont, "DANGER AHEAD!", new Vector2(550, 400), Color.White);
-                spriteBatch.DrawString(font, "Health " + Player.health, new Vector2(50, 30), Color.White);
-                spriteBatch.DrawString(font, "Score " + Player.score, new Vector2(50, 150), Color.White);
-                spriteBatch.DrawString(font, "HighScore " + hiScores.HighestScore(), new Vector2(50, 200), Color.White);
-                spriteBatch.DrawString(font, "Combo " + Player.combo, new Vector2(50, 100), Color.White);
-                spriteBatch.DrawString(font, "Gun: " + Player.currentGun, new Vector2(50, 250), Color.White);
+                spriteBatch.DrawString(epicfont, "Health " + Player.health, new Vector2(50, 30), Color.White);
+                spriteBatch.DrawString(epicfont, "Score " + Player.score, new Vector2(50, 150), Color.White);
+                spriteBatch.DrawString(epicfont, "HighScore " + hiScores.HighestScore(), new Vector2(50, 200), Color.White);
+                spriteBatch.DrawString(epicfont, "Combo " + Player.combo, new Vector2(50, 100), Color.White);
+                spriteBatch.DrawString(epicfont, "Gun: " + Player.currentGun, new Vector2(50, 250), Color.White);
                 if (Player.homingammo > 0)
-                    spriteBatch.DrawString(font, "HomingAmmo: " + Player.homingammo, new Vector2(50, 300), Color.White);
+                    spriteBatch.DrawString(epicfont, "HomingAmmo: " + Player.homingammo, new Vector2(50, 300), Color.White);
                 else if (Player.homingammo == 0)
-                    spriteBatch.DrawString(font, "You are out of ammunition!", new Vector2(50, 300), Color.White);
-                spriteBatch.DrawString(font, "Enemies killed: " + enemiesKilled, new Vector2(50, 400), Color.White);
-                spriteBatch.DrawString(font, "Velocity " + Player.velocity, new Vector2(50, 500), Color.White);
-                spriteBatch.DrawString(font, "Position " + Player.arrowPosition, new Vector2(50, 550), Color.White);
+                    spriteBatch.DrawString(epicfont, "You are out of ammunition!", new Vector2(50, 300), Color.White);
+                spriteBatch.DrawString(epicfont, "Enemies killed: " + enemiesKilled, new Vector2(50, 400), Color.White);
+                /*spriteBatch.DrawString(e, "Velocity " + Player.velocity, new Vector2(50, 500), Color.White);
+                spriteBatch.DrawString(font, "Position " + Player.arrowPosition, new Vector2(50, 550), Color.White);*/
 
                 if (Player.score > hiScores.HighestScore())
                 {
                     hsTimer++;
                     if (hsTimer < 75)
-                        spriteBatch.DrawString(scifiFont, "New Highscore!!", new Vector2(650, 400), Color.White);
+                        spriteBatch.DrawString(scifiFont, "New Highscore!!", new Vector2(500, 400), Color.White);
                 }
                 if (MiniGun.isActive)
                 {

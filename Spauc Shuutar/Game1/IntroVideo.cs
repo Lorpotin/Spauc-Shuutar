@@ -168,6 +168,7 @@ namespace SpacuShuutar
 
         public void DrawCredits(SpriteBatch spriteBatch)
         {
+            
             if (creditsLevel == 0)
             {
                 spriteBatch.DrawString(font, "- Tatu Virta", new Vector2(400, 600), creditsColour);
@@ -199,7 +200,7 @@ namespace SpacuShuutar
                 spriteBatch.DrawString(font, "- Teemu Hokkanen", new Vector2(400, 600), creditsColour);
 
 
-                spriteBatch.DrawString(font, "Junior Programmer", new Vector2(400, 450), Color.White);
+                spriteBatch.DrawString(font, "Programmer", new Vector2(400, 450), Color.White);
 
             }
         }

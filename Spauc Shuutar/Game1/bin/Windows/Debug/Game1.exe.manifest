@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="Game1.exe" version="1.0.0.2" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" type="win32" />
+  <asmv1:assemblyIdentity name="Game1.exe" version="1.0.0.3" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" type="win32" />
   <description asmv2:iconFile="Icon.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Game1.exe" size="210944">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Game1.exe" size="210432">
       <assemblyIdentity name="Game1" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>VF8rrkuHJ3yKokn6NgC4wqBQr5U=</dsig:DigestValue>
+        <dsig:DigestValue>9ndhdopHarVtayWsMZcaz85loiM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -192,13 +192,13 @@
       <dsig:DigestValue>zBCP6rfSYEt8/B3hMmbH/9HPIyQ=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\alien_2.png" size="11465">
+  <file name="Content\alien_2.png" size="12318">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>fAsM3HSsHRjG2DkfUGm5xSI0k70=</dsig:DigestValue>
+      <dsig:DigestValue>3FlB1gXNCxWZBDu2eXfe/7WxKE8=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\alienLaser.png" size="3927">
@@ -363,15 +363,6 @@
       <dsig:DigestValue>MT2NQIGPUZy8n2oGEAx+dD13wRk=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\creditz.png" size="3998109">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>N7R81Mw2lhp4mql4lWX2SxYBHLk=</dsig:DigestValue>
-    </hash>
-  </file>
   <file name="Content\crosshair.png" size="2456">
     <hash>
       <dsig:Transforms>
@@ -516,15 +507,6 @@
       <dsig:DigestValue>Rzz4pIQn3tWC8lIo1sYP2xq8Mk4=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\gameover.png" size="35217">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>gAPoFXXh5OCiWxtsBTLjB+LmdUI=</dsig:DigestValue>
-    </hash>
-  </file>
   <file name="Content\gamuovar.wma" size="327101">
     <hash>
       <dsig:Transforms>
@@ -552,15 +534,6 @@
       <dsig:DigestValue>Vf3tB2Js7gAMn6PZDIzqT6BV9ME=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\highscore.png" size="11397">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>OzOoLwuFs3LuMZkczfKEBs/12QM=</dsig:DigestValue>
-    </hash>
-  </file>
   <file name="Content\highscorebutton.png" size="5760">
     <hash>
       <dsig:Transforms>
@@ -568,24 +541,6 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
       <dsig:DigestValue>LqGnFA4x5t8H1ZPztXR9GtEOSwg=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Content\hpborders.png" size="304">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>BbW9W8OuC7RRdFi0RiTE1e/oSTA=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Content\hpforeground.png" size="605">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>a0cOvR/YdscbS7dDDxxA0inWE0M=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\intro.png" size="18062">
@@ -705,15 +660,6 @@
       <dsig:DigestValue>FzqwnQfpIv0Nsm75JrawS6GTv0o=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\minigun.png" size="796">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>HPRvGRQXIjN/dL0WpMSOvdi0GCc=</dsig:DigestValue>
-    </hash>
-  </file>
   <file name="Content\PLAY.png" size="2857">
     <hash>
       <dsig:Transforms>
@@ -804,13 +750,13 @@
       <dsig:DigestValue>dqKGzXORHovjIj+KHPAxOAFrBVE=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Ship_2.png" size="12790">
+  <file name="Content\Ship_2.png" size="13096">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>eeB6PbvYjMlGsMtZZJuq+B+fzhg=</dsig:DigestValue>
+      <dsig:DigestValue>dVK+hzJYpY5SuLWj7zDWa2fkSlA=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Ship_3.png" size="5029">

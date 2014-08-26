@@ -1,5 +1,3 @@
-C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\obj\x86\Debug\Game1.exe
-C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\obj\x86\Debug\Game1.pdb
 C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Debug\Content\AGAIN.png
 C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Debug\Content\alien.png
 C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Debug\Content\alien_2.png
@@ -19,7 +17,6 @@ C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Deb
 C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Debug\Content\choosered.png
 C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Debug\Content\circle.png
 C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Debug\Content\Credits.png
-C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Debug\Content\creditz.png
 C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Debug\Content\crosshair.png
 C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Debug\Content\diamond.png
 C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Debug\Content\exp1.wav
@@ -31,13 +28,9 @@ C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Deb
 C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Debug\Content\Exp_type_C.png
 C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Debug\Content\fadetexture.png
 C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Debug\Content\game.wma
-C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Debug\Content\gameover.png
 C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Debug\Content\gamuovar.wma
 C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Debug\Content\GreenSINGLE.png
-C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Debug\Content\highscore.png
 C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Debug\Content\highscorebutton.png
-C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Debug\Content\hpborders.png
-C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Debug\Content\hpforeground.png
 C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Debug\Content\intro.png
 C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Debug\Content\IT'S OVER 9000!.png
 C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Debug\Content\Laser.png
@@ -48,7 +41,6 @@ C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Deb
 C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Debug\Content\menu.wma
 C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Debug\Content\menuship.png
 C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Debug\Content\mgunbullet.png
-C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Debug\Content\minigun.png
 C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Debug\Content\PLAY.png
 C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Debug\Content\pomo.wma
 C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Debug\Content\QUIT.png
@@ -100,8 +92,6 @@ C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Deb
 C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Debug\Star.cs
 C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Debug\StarField.cs
 C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Debug\Ufo.cs
-C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Debug\Game1.exe
-C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Debug\Game1.pdb
 C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Debug\MonoGame.Framework.dll
 C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Debug\SharpDX.MediaFoundation.dll
 C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Debug\SharpDX.dll
@@ -123,9 +113,13 @@ C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Deb
 C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Debug\SharpDX.RawInput.xml
 C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Debug\SharpDX.Direct3D9.xml
 C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\obj\x86\Debug\Spauc Shuutar.csprojResolveAssemblyReference.cache
-C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Debug\Game1.exe.manifest
-C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Debug\Game1.application
-C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\obj\x86\Debug\Game1.exe.manifest
-C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\obj\x86\Debug\Game1.application
 C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Debug\Content\alienLaser.png
 C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Debug\Content\upgrdlaser.png
+C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Debug\Spauc Shuutar - It's over 9000.exe.manifest
+C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Debug\Spauc Shuutar - It's over 9000.application
+C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Debug\Spauc Shuutar - It's over 9000.exe
+C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\bin\Windows\Debug\Spauc Shuutar - It's over 9000.pdb
+C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\obj\x86\Debug\Spauc Shuutar - It's over 9000.exe.manifest
+C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\obj\x86\Debug\Spauc Shuutar - It's over 9000.application
+C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\obj\x86\Debug\Spauc Shuutar - It's over 9000.exe
+C:\Users\Otto\Documents\GitHub\Spauc-Shuutar\Spauc Shuutar\Game1\obj\x86\Debug\Spauc Shuutar - It's over 9000.pdb

@@ -79,7 +79,7 @@ namespace SpacuShuutar
             score = 0;
             ammo = 5;
             topSpeed = 5;
-            homingammo = 500;
+            homingammo = 0;
             rotationAcceleration = 0.5f;
             velocity = new Vector2(0, 0);
             acceleration = new Vector2(0, 0);
